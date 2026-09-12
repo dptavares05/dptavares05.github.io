@@ -73,41 +73,41 @@
   .logo{font-family:var(--mono); font-weight:600; font-size:0.95rem; letter-spacing:0.04em;}
   .logo span{color:var(--copper);}
   nav.links {
-      display: flex;
-      gap: 4px; 
-      font-family: var(--mono); 
-      font-size: 0.8rem;
-      align-items: center;
-    }
+    display: flex;
+    gap: 4px; 
+    font-family: var(--mono); 
+    font-size: 0.8rem;
+    align-items: center;
+  }
     
-    nav.links a {
-      color: var(--text-muted); 
-      padding: 8px 16px; 
-      border-radius: 6px;
-      background: transparent;
-      transition: all 0.3s var(--ease); 
-    }
+  nav.links a {
+    color: var(--text-muted); 
+    padding: 8px 16px; 
+    border-radius: 6px;
+    background: transparent;
+    transition: all 0.3s var(--ease); 
+  }
     
-    nav.links a:hover {
-      color: var(--copper-light);
-      background: rgba(201, 122, 61, 0.08); 
-      transform: scale(1.05) translateY(-2px); 
-      box-shadow: 0 4px 12px rgba(201, 122, 61, 0.15); 
-    }
+  nav.links a:hover {
+    color: var(--copper-light);
+    background: rgba(201, 122, 61, 0.08); 
+    transform: scale(1.05) translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(201, 122, 61, 0.15); 
+  }
   .nav-toggle{display:none; background:none; border:1px solid var(--panel-line); color:var(--text); padding:8px 12px; font-family:var(--mono); border-radius:4px;}
 
   /* HERO */
   .hero{padding:96px 0 70px; position:relative;}
   .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
   h1 {
-      font-family: var(--zen);
-      font-size: clamp(1.8rem, 4vw, 2.8rem); 
-      line-height: 1.15;
-      font-weight: 700;
-      margin: 18px 0 18px;
-      letter-spacing: -0.01em;
-      text-wrap: balance; 
-    }
+    font-family: var(--zen);
+    font-size: clamp(1.8rem, 4vw, 2.8rem); 
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 18px 0 18px;
+    letter-spacing: -0.01em;
+    text-wrap: balance; 
+  }
   h1 em{color:var(--copper-light); font-style:normal;}
   .hero p.lede{font-size:1.08rem; color:var(--text-muted); max-width:480px; margin-bottom:32px;}
   .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
@@ -192,14 +192,15 @@
   .proj-card{
     background:var(--panel); border:1px solid var(--panel-line); border-radius:8px; padding:22px;
     display:flex; flex-direction:column; gap:10px; transition:transform .2s, border-color .2s;
+    cursor:pointer;
   }
   .proj-card:hover{transform:translateY(-4px); border-color:var(--copper);}
+  .proj-card:hover .proj-link{color:var(--text);}
   .proj-cat{font-family:var(--mono); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-light);}
   .proj-card h3{font-size:1.02rem; font-weight:700;}
   .proj-card p{font-size:0.88rem; color:var(--text-muted); flex-grow:1;}
   .proj-stack{font-family:var(--mono); font-size:0.72rem; color:var(--text-muted);}
-  .proj-link{font-family:var(--mono); font-size:0.78rem; color:var(--copper-light); display:inline-flex; align-items:center; gap:6px; margin-top:4px;}
-  .proj-link:hover{color:var(--text);}
+  .proj-link{font-family:var(--mono); font-size:0.78rem; color:var(--copper-light); display:inline-flex; align-items:center; gap:6px; margin-top:4px; transition:color .2s;}
 
   /* FOOTER / CONTACT */
   footer{padding:80px 0 50px; border-top:1px solid var(--panel-line);}
@@ -295,7 +296,7 @@
             <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">PHP</span>
           </div>
         </div>
-        <div class="stack-caption">01 → 04 — three years, one  learning journey</div>
+        <div class="stack-caption">01 → 04 — three years, one learning journey</div>
       </div>
     </div>
   </section>
@@ -325,6 +326,11 @@
       <p>What three years of coursework actually turned into.</p>
     </div>
     <div class="proj-grid">
+      <div class="proj-card reveal-item">
+        <div class="proj-cat">Frontend</div>
+        <h3>React.js & Modern UI</h3>
+        <p>Building modular, state-driven interfaces using React hooks, components, and responsive front-end practices.</p>
+      </div>
       <div class="proj-card reveal-item">
         <div class="proj-cat">Systems & Architecture</div>
         <h3>Low-level programming</h3>
@@ -399,85 +405,93 @@
     </div>
     <div class="proj-grid">
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/reactProjects" target="_blank" rel="noopener">
+        <div class="proj-cat">Frontend / Web</div>
+        <h3>React Projects</h3>
+        <p>Collection of modular web applications exploring component architecture, state management, and modern UI/UX practices.</p>
+        <div class="proj-stack">React · JavaScript · CSS3</div>
+        <span class="proj-link">View repo →</span>
+      </a>
+
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/eventastic" target="_blank" rel="noopener">
         <div class="proj-cat">Backend</div>
         <h3>Eventastic</h3>
         <p>Modular event management system with registration logic and scalable architecture.</p>
         <div class="proj-stack">Java · Spring Boot</div>
-        <a class="proj-link" href="https://github.com/dptavares05/eventastic" target="_blank" rel="noopener">View repo →</a>
-      </div>
+        <span class="proj-link">View repo →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_TecnologiasWeb/tweb-t2-58049-59119" target="_blank" rel="noopener">
         <div class="proj-cat">Web App</div>
         <h3>Room Rent</h3>
         <p>Full-stack student housing web platform with a responsive front-end and RESTful API integration.</p>
         <div class="proj-stack">JavaScript · HTML/CSS · PostgreSQL · Java · Spring</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_TecnologiasWeb/tweb-t2-58049-59119" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_redesOportunistas" target="_blank" rel="noopener">
         <div class="proj-cat">Mobile App</div>
         <h3>Opportunistic Messenger</h3>
         <p>Native Android prototype for decentralized opportunistic network communication with dynamic node-state management.</p>
         <div class="proj-stack">Kotlin · Android SDK</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_redesOportunistas" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalho_RedesdeComputadores" target="_blank" rel="noopener">
         <div class="proj-cat">Networking</div>
         <h3>Real-Time Chat UDP/TCP</h3>
         <p>Client-server messaging app: UDP for low-latency transmission, TCP for reliable file transfer, concurrency via pthreads and select().</p>
         <div class="proj-stack">C</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalho_RedesdeComputadores" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_SistemasDigitais" target="_blank" rel="noopener">
         <div class="proj-cat">Hardware</div>
         <h3>Digital Traffic Controller</h3>
         <p>Digital logic circuit simulated in Logisim, with algorithmic state machine control optimized via Karnaugh maps and D-type flip-flops.</p>
         <div class="proj-stack">Logisim · Boolean Logic</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_SistemasDigitais" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalhos_EstruturasdeDadosEAlgoritmos" target="_blank" rel="noopener">
         <div class="proj-cat">Algorithms</div>
         <h3>DSA projects</h3>
         <p>Data structures and algorithms projects repository: Edmonds-Karp max flow, dynamic programming, and BFS graph traversals.</p>
         <div class="proj-stack">C</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalhos_EstruturasdeDadosEAlgoritmos" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_programacao3" target="_blank" rel="noopener">
         <div class="proj-cat">Algorithmic Agent</div>
         <h3>Battleship OCaml Agent</h3>
         <p>Autonomous Battleship-playing agent using a deterministic attack strategy.</p>
         <div class="proj-stack">OCaml</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_programacao3" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_MachineLearning" target="_blank" rel="noopener">
         <div class="proj-cat">Machine Learning</div>
         <h3>Brain Tumor Prediction</h3>
         <p>ML models (Decision Trees, SVM) trained on Kaggle datasets for automated medical diagnosis.</p>
         <div class="proj-stack">Python · Scikit-Learn</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_MachineLearning" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_arquiteturaComputadores" target="_blank" rel="noopener">
         <div class="proj-cat">Low Level</div>
         <h3>Image De-noising</h3>
         <p>Low-level image processing: mean/median noise-reduction filters implemented directly in assembly.</p>
         <div class="proj-stack">RISC-V Assembly</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_arquiteturaComputadores" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
-      <div class="proj-card reveal-item">
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_programacao2/P2-Guru-WordGame-Java" target="_blank" rel="noopener">
         <div class="proj-cat">Logic & Games</div>
         <h3>Guru & Ouri</h3>
         <p>Game logic implementations with custom dictionaries and state persistence.</p>
         <div class="proj-stack">Java · C</div>
-        <a class="proj-link" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_programacao2/P2-Guru-WordGame-Java" target="_blank" rel="noopener">View code →</a>
-      </div>
+        <span class="proj-link">View code →</span>
+      </a>
 
     </div>
   </section>
