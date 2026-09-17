@@ -1,571 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diogo Tavares' Personal Portfolio — Computer Engineer</title>
-<meta name="description" content="Diogo Tavares' Personal Porfolio">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-  
-<style>
-  :root{
-    --bg: #0F1C2B;
-    --bg-deep: #0A141F;
-    --panel: #16273A;
-    --panel-line: rgba(201,122,61,0.16);
-    --paper: #EDE6D6;
-    --ink: #15212D;
-    --copper: #C97A3D;
-    --copper-light: #E2A268;
-    --text: #F2EFE6;
-    --text-muted: #92A6BA;
-    --mono: 'IBM Plex Mono', monospace;
-    --zen: 'Zen Dots', sans-serif;
-    --sans: 'Inter', sans-serif;
-    --ease: cubic-bezier(.22,1,.36,1);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--sans);
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  body::before{
-    content:"";
-    position:fixed; inset:0;
-    background-image:
-      linear-gradient(var(--panel-line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--panel-line) 1px, transparent 1px);
-    background-size: 42px 42px;
-    pointer-events:none;
-    z-index:0;
-    opacity:0.6;
-  }
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1080px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:0.72rem;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--copper-light);
-    display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{content:"//"; color:var(--copper);}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diogo Tavares — Personal Portfolio</title>
+  <meta name="description" content="Personal portfolio of Diogo Tavares. Computer Engineering graduate focused on software design, Java, and modern web applications.">
 
-  /* NAV */
-  header.nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(15,28,43,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--panel-line);
-  }
-  .nav-inner{
-    max-width:1080px; margin:0 auto; padding:16px 28px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .logo{font-family:var(--mono); font-weight:600; font-size:0.95rem; letter-spacing:0.04em;}
-  .logo span{color:var(--copper);}
-  nav.links {
-    display: flex;
-    gap: 4px; 
-    font-family: var(--mono); 
-    font-size: 0.8rem;
-    align-items: center;
-  }
+  <!-- Typography: Space Grotesk (Body), JetBrains Mono (Code/UI), Nippo (Display/Headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=nippo@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0C1520;
+      --panel: #132232;
+      --panel-line: rgba(201, 122, 61, 0.18);
+      --panel-hover: #182C40;
+      --paper: #EFE8DC;
+      --ink: #111B24;
+      --ink-muted: #4B4133;
+      --copper: #C97A3D;
+      --copper-light: #E2A268;
+      --text: #F1EFEA;
+      --text-muted: #8E9EAF;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Space Grotesk', sans-serif;
+      --heading: 'Nippo', sans-serif;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+      letter-spacing: -0.01em;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(var(--panel-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--panel-line) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .eyebrow::before { content: "//"; color: var(--copper); }
+
+    /* Navigation */
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(12, 21, 32, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--panel-line);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-family: var(--mono); font-weight: 600; font-size: 0.95rem; }
+    .logo span { color: var(--copper); }
     
-  nav.links a {
-    color: var(--text-muted); 
-    padding: 8px 16px; 
-    border-radius: 6px;
-    background: transparent;
-    transition: all 0.3s var(--ease); 
-  }
-    
-  nav.links a:hover {
-    color: var(--copper-light);
-    background: rgba(201, 122, 61, 0.08); 
-    transform: scale(1.05) translateY(-2px); 
-    box-shadow: 0 4px 12px rgba(201, 122, 61, 0.15); 
-  }
-  .nav-toggle{display:none; background:none; border:1px solid var(--panel-line); color:var(--text); padding:8px 12px; font-family:var(--mono); border-radius:4px;}
+    nav.links {
+      display: flex;
+      gap: 4px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      align-items: center;
+    }
+    nav.links a {
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: all 0.2s var(--ease);
+    }
+    nav.links a:hover {
+      color: var(--copper-light);
+      background: rgba(201, 122, 61, 0.08);
+    }
+    .nav-toggle {
+      display: none; background: none; border: 1px solid var(--panel-line);
+      color: var(--text); padding: 7px 12px; font-family: var(--mono); font-size: 0.8rem;
+      border-radius: 4px; cursor: pointer;
+    }
 
-  /* HERO */
-  .hero{padding:96px 0 70px; position:relative;}
-  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
-  h1 {
-    font-family: var(--zen);
-    font-size: clamp(1.8rem, 4vw, 2.8rem); 
-    line-height: 1.15;
-    font-weight: 700;
-    margin: 18px 0 18px;
-    letter-spacing: -0.01em;
-    text-wrap: balance; 
-  }
-  h1 em{color:var(--copper-light); font-style:normal;}
-  .hero p.lede{font-size:1.08rem; color:var(--text-muted); max-width:480px; margin-bottom:32px;}
-  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    font-family:var(--mono); font-size:0.82rem; letter-spacing:0.04em;
-    padding:13px 22px; border-radius:3px; display:inline-flex; align-items:center; gap:8px;
-    transition:transform .2s, box-shadow .2s;
-  }
-  .btn-primary{background:var(--copper); color:#1A0F06; font-weight:600;}
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(201,122,61,0.35);}
-  .btn-ghost{border:1px solid var(--panel-line); color:var(--text);}
-  .btn-ghost:hover{border-color:var(--copper); transform:translateY(-2px);}
+    /* Hero section */
+    .hero {
+      padding: 110px 0 75px;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-family: var(--heading);
+      font-size: clamp(2rem, 4.4vw, 3rem);
+      line-height: 1.25;
+      font-weight: 400;
+      margin: 18px 0 20px;
+      letter-spacing: 0.02em; 
+    }
+    .hero h1 em {
+      color: var(--copper-light);
+      font-style: normal;
+    }
+    .hero p.lede {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      margin: 0 auto 34px;
+      max-width: 620px;
+      line-height: 1.6;
+    }
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.02em;
+      padding: 13px 22px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .btn-primary { background: var(--copper); color: #160D05; font-weight: 600; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,122,61,0.3); }
+    .btn-ghost { border: 1px solid var(--panel-line); color: var(--text); }
+    .btn-ghost:hover { border-color: var(--copper); transform: translateY(-2px); }
 
-  /* hero load-in animation */
-  .hero-anim{opacity:0; transform:translateY(16px); animation:heroIn .7s var(--ease) forwards;}
-  .hero-anim.d1{animation-delay:.05s;}
-  .hero-anim.d2{animation-delay:.15s;}
-  .hero-anim.d3{animation-delay:.25s;}
-  .hero-anim.d4{animation-delay:.35s;}
-  @keyframes heroIn{ to{opacity:1; transform:translateY(0);} }
+    /* Shared section styles */
+    section { padding: 64px 0; }
+    .section-head { margin-bottom: 36px; }
+    .section-head h2 { font-family: var(--mono); font-size: 1.8rem; font-weight: 600; margin-top: 8px; }
+    .section-head p { color: var(--text-muted); max-width: 580px; margin-top: 8px; }
 
-  /* STACK DIAGRAM  */
-  .stack-diagram{position:relative; display:flex; flex-direction:column; gap:10px;}
-  .stack-diagram::before{
-    content:""; position:absolute; left:18px; top:6px; bottom:6px; width:1px;
-    background:linear-gradient(to bottom, transparent, var(--copper), transparent);
-  }
-  .layer{
-    background:var(--panel);
-    border:1px solid var(--panel-line);
-    border-left:3px solid var(--copper);
-    border-radius:4px;
-    padding:14px 18px 14px 38px;
-    position:relative;
-    transition:transform .25s, border-color .25s, background .25s;
-    cursor:default;
-  }
-  .layer:hover{transform:translateX(8px); border-left-color:var(--copper-light); background:#1B2E44;}
-  .layer::after{
-    content:""; position:absolute; left:14px; top:50%; transform:translate(-50%,-50%);
-    width:9px; height:9px; border-radius:50%; background:var(--bg); border:2px solid var(--copper);
-  }
-  .layer .l-label{font-family:var(--mono); font-size:0.68rem; letter-spacing:0.12em; color:var(--copper-light); text-transform:uppercase;}
-  .layer .l-title{font-weight:700; font-size:0.98rem; margin:3px 0 6px;}
-  .layer .l-tags{display:flex; flex-wrap:wrap; gap:6px;}
-  .tag{font-family:var(--mono); font-size:0.66rem; color:var(--text-muted); border:1px solid var(--panel-line); padding:2px 7px; border-radius:10px;}
-  .stack-caption{font-family:var(--mono); font-size:0.7rem; color:var(--text-muted); margin-top:10px; padding-left:38px;}
+    /* About section */
+    .about {
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 8px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+    }
+    .about .section-head h2, .about .eyebrow { color: var(--ink); }
+    .about .eyebrow::before { color: var(--copper); }
+    .about p { color: var(--ink-muted); font-size: 1.02rem; line-height: 1.7; }
+    .about-facts { font-family: var(--mono); font-size: 0.82rem; display: flex; flex-direction: column; gap: 14px; }
+    .fact { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(20, 16, 8, 0.18); padding-bottom: 8px; }
+    .fact b { color: var(--ink); }
+    .fact span { color: var(--ink-muted); }
 
-  /* SECTION GENERIC */
-  section{padding:80px 0;}
-  .section-head{margin-bottom:42px;}
-  .section-head h2{font-family:var(--mono); font-size:1.9rem; font-weight:700; margin-top:10px;}
-  .section-head p{color:var(--text-muted); max-width:560px; margin-top:10px;}
+    /* Experience section */
+    .exp-card { background: var(--panel); border: 1px solid var(--panel-line); border-radius: 8px; padding: 30px; }
+    .exp-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .exp-head h3 { font-size: 1.2rem; font-weight: 600; }
+    .exp-head .role { font-family: var(--mono); font-size: 0.78rem; color: var(--copper-light); }
+    .exp-org { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 6px; }
+    .exp-list { display: grid; gap: 12px; margin-top: 16px; }
+    .exp-item { display: flex; gap: 12px; font-size: 0.92rem; color: var(--text); }
+    .exp-item b { color: var(--copper-light); font-family: var(--mono); font-size: 0.76rem; white-space: nowrap; }
 
-  /* ABOUT (paper panel) */
-  .about{
-    background:var(--paper); color:var(--ink); border-radius:10px;
-    padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:40px;
-  }
-  .about .section-head h2, .about .eyebrow{color:var(--ink);}
-  .about .eyebrow::before{color:var(--copper);}
-  .about p{color:#3C3325; font-size:1.02rem;}
-  .about-facts{font-family:var(--mono); font-size:0.84rem; display:flex; flex-direction:column; gap:14px;}
-  .fact{display:flex; justify-content:space-between; border-bottom:1px solid rgba(20,16,8,0.15); padding-bottom:10px;}
-  .fact b{color:var(--ink);}
-  .fact span{color:#6b5d44;}
+    /* Projects grid */
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .proj-card {
+      background: var(--panel);
+      border: 1px solid var(--panel-line);
+      border-radius: 8px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform .2s, border-color .2s;
+    }
+    a.proj-card:hover { transform: translateY(-3px); border-color: var(--copper); background: var(--panel-hover); }
+    .proj-cat { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper-light); }
+    .proj-card h3 { font-size: 1.05rem; font-weight: 600; }
+    .proj-card p { font-size: 0.88rem; color: var(--text-muted); flex-grow: 1; }
+    .proj-stack { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); }
+    .proj-link { font-family: var(--mono); font-size: 0.76rem; color: var(--copper-light); display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
 
-  /* EXPERIENCE */
-  .exp-card{
-    background:var(--panel); border:1px solid var(--panel-line); border-radius:8px; padding:32px;
-  }
-  .exp-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
-  .exp-head h3{font-size:1.2rem; font-weight:700;}
-  .exp-head .role{font-family:var(--mono); font-size:0.78rem; color:var(--copper-light);}
-  .exp-org{color:var(--text-muted); font-size:0.9rem; margin-bottom:6px;}
-  .exp-list{display:grid; gap:14px; margin-top:18px;}
-  .exp-item{display:flex; gap:12px; font-size:0.95rem; color:var(--text);}
-  .exp-item b{color:var(--copper-light); font-family:var(--mono); font-size:0.78rem; white-space:nowrap;}
+    /* Contact footer */
+    footer { padding: 80px 0 50px; border-top: 1px solid var(--panel-line); margin-top: 40px; }
+    .contact-grid { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 30px; }
+    footer h2 { font-family: var(--mono); font-size: 1.7rem; line-height: 1.3; }
+    .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .clink {
+      border: 1px solid var(--panel-line); border-radius: 4px; padding: 12px 18px;
+      font-family: var(--mono); font-size: 0.82rem; display: flex; align-items: center; gap: 10px;
+      transition: border-color .2s, transform .2s;
+    }
+    .clink:hover { border-color: var(--copper); transform: translateY(-2px); }
+    .foot-note { margin-top: 50px; font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 
-  /* PROJECTS */
-  .proj-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:18px;}
-  .proj-card{
-    background:var(--panel); border:1px solid var(--panel-line); border-radius:8px; padding:22px;
-    display:flex; flex-direction:column; gap:10px; transition:transform .2s, border-color .2s;
-    cursor:pointer;
-  }
-  .proj-card:hover{transform:translateY(-4px); border-color:var(--copper);}
-  .proj-card:hover .proj-link{color:var(--text);}
-  .proj-cat{font-family:var(--mono); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-light);}
-  .proj-card h3{font-size:1.02rem; font-weight:700;}
-  .proj-card p{font-size:0.88rem; color:var(--text-muted); flex-grow:1;}
-  .proj-stack{font-family:var(--mono); font-size:0.72rem; color:var(--text-muted);}
-  .proj-link{font-family:var(--mono); font-size:0.78rem; color:var(--copper-light); display:inline-flex; align-items:center; gap:6px; margin-top:4px; transition:color .2s;}
+    /* Scroll-triggered reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      will-change: opacity, transform;
+    }
 
-  /* FOOTER / CONTACT */
-  footer{padding:80px 0 50px; border-top:1px solid var(--panel-line);}
-  .contact-grid{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:30px;}
-  footer h2{font-family:var(--mono); font-size:2rem;}
-  .contact-links{display:flex; gap:16px; flex-wrap:wrap;}
-  .clink{
-    border:1px solid var(--panel-line); border-radius:6px; padding:14px 20px;
-    font-family:var(--mono); font-size:0.85rem; display:flex; align-items:center; gap:10px;
-    transition:border-color .2s, transform .2s;
-  }
-  .clink:hover{border-color:var(--copper); transform:translateY(-2px);}
-  .foot-note{margin-top:50px; font-family:var(--mono); font-size:0.72rem; color:var(--text-muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  /* scroll reveal: sections slide+fade, alternating direction for rhythm */
-  .reveal{opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
-  .reveal.from-left{transform:translate(-26px,0);}
-  .reveal.from-right{transform:translate(26px,0);}
-  .reveal.show{opacity:1; transform:translate(0,0);}
+    /* Staggered animation for elements inside revealed sections */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+      will-change: opacity, transform;
+    }
 
-  /* staggered children inside revealed sections */
-  .reveal-item{opacity:0; transform:translateY(16px) scale(.98); transition:opacity .5s var(--ease), transform .5s var(--ease);}
-  .reveal-item.show{opacity:1; transform:translateY(0) scale(1);}
+    .reveal-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  @media (max-width: 860px){
-    .hero-grid{grid-template-columns:1fr;}
-    .about{grid-template-columns:1fr; padding:30px;}
-    nav.links{display:none;}
-    .nav-toggle{display:inline-block;}
-  }
+    /* Respect the user's reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal-item {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    .reveal, .reveal-item, .hero-anim{transition:none !important; animation:none !important; opacity:1 !important; transform:none !important;}
-  }
-</style>
+    /* Mobile layout */
+    @media (max-width: 820px) {
+      .hero { padding: 80px 0 50px; }
+      .about { grid-template-columns: 1fr; padding: 28px; }
+      .nav-toggle { display: block; }
+      
+      nav.links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; right: 24px;
+        background: var(--panel);
+        border: 1px solid var(--panel-line);
+        padding: 16px;
+        border-radius: 6px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      }
+      nav.links.is-open { display: flex; }
+    }
+
+  </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="logo">Diogo<span>_</span>Tavares</div>
-    <nav class="links">
+    <a href="#" class="logo">Diogo<span>_</span>Tavares</a>
+    <nav class="links" id="navLinks">
       <a href="#about">About</a>
-      <a href="#stack">Stack</a>
-      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="nav-toggle" id="navToggle">menu</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">Menu</button>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow hero-anim d1">computer engineering graduate · sines, pt</div>
-        <h1 class="hero-anim d2">Welcome, I'm <em>Diogo Tavares</em><br/> and this is my <em>Personal Portfolio</em></h1>
-        <p class="lede hero-anim d3">I'm a Computer Engineering graduate who learned how to create software from the ground up. I really enjoy actually understanding what's underneath all the abstraction.</p>
-        <div class="btn-row hero-anim d4">
-          <a class="btn btn-primary" href="https://github.com/dptavares05/projetosLicenciatura" target="_blank" rel="noopener">View GitHub Projects Portfolio Repo →</a>
-          <a class="btn btn-ghost" href="mailto:dp.tavares05@gmail.com">Get in touch</a>
-        </div>
-      </div>
-
-      <div class="stack-diagram hero-anim d4" id="stackHero">
-        <div class="layer">
-          <div class="l-label">Layer 01 — Hardware & Logic</div>
-          <div class="l-title">Low level programming</div>
-          <div class="l-tags">
-            <span class="tag">RISC-V Assembly</span><span class="tag">Logisim</span><span class="tag">Boolean Logic</span>
-          </div>
-        </div>
-        <div class="layer">
-          <div class="l-label">Layer 02 — Systems & Networking</div>
-          <div class="l-title">Sockets, threads and OS's</div>
-          <div class="l-tags">
-            <span class="tag">C</span><span class="tag">TCP/UDP</span><span class="tag">pthreads</span><span class="tag">Linux</span>
-          </div>
-        </div>
-        <div class="layer">
-          <div class="l-label">Layer 03 — Backend & Data</div>
-          <div class="l-title">Learning to build services that hold up</div>
-          <div class="l-tags">
-            <span class="tag">Java / Spring</span><span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Docker</span>
-          </div>
-        </div>
-        <div class="layer">
-          <div class="l-label">Layer 04 — Web & Full-Stack</div>
-          <div class="l-title">What I'm working on and learning today</div>
-          <div class="l-tags">
-            <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">PHP</span>
-          </div>
-        </div>
-        <div class="stack-caption">01 → 04 — three years, one learning journey</div>
-      </div>
+  <!-- Hero -->
+  <section class="hero reveal">
+    <div class="eyebrow reveal-item">Computer Engineering Graduate · Portugal</div>
+    <h1 class="reveal-item">Welcome, I'm <em>Diogo Tavares</em><br/> and this is my <em>Personal Portfolio</em>.</h1>
+    <p class="lede reveal-item">
+      I'm a software developer with a background in Computer Engineering. I focus on building practical applications across the stack, working with object-oriented design in Java, relational databases, and frontends in React.
+    </p>
+    <div class="btn-row reveal-item">
+      <a class="btn btn-primary" href="#projects">Explore Projects ↓</a>
+      <a class="btn btn-ghost" href="https://github.com/dptavares05" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
     </div>
   </section>
 
-  <section id="about" class="reveal from-left">
+  <!-- About -->
+  <section id="about" class="reveal">
     <div class="about">
       <div>
         <div class="eyebrow">Profile</div>
         <div class="section-head"><h2>About me</h2></div>
-        <p>Graduate Computer Engineering student at the University of Évora, specializing in software development and web applications. I'm ready to implement the multiple engineering principles i learned throughout my studies to build practical, efficient solutions — and motivated to keep growing within the global tech industry.</p>
+        <p>
+          I completed my degree in Computer Engineering at the University of Évora. My coursework gave me a concrete foundation in how software operates, from low-level memory and networks to full-stack web platforms. Currently, I spend my time designing clean application logic, handling databases, and putting together responsive user interfaces.
+        </p>
       </div>
       <div class="about-facts">
-        <div class="fact reveal-item"><b>Degree</b><span>BSc Computer Engineering</span></div>
-        <div class="fact reveal-item"><b>University</b><span>University of Évora</span></div>
-        <div class="fact reveal-item"><b>Timeline</b><span>2023 — 2026</span></div>
-        <div class="fact reveal-item"><b>Based in</b><span>Sines, Portugal</span></div>
-        <div class="fact reveal-item"><b>Languages</b><span>Portuguese (native), English</span></div>
-        <div class="fact reveal-item"><b>Currently learning</b><span>React & TypeScript</span></div>
+        <div class="fact reveal-item"><b>Degree</b><span>BSc in Computer Engineering</span></div>
+        <div class="fact reveal-item"><b>Institution</b><span>University of Évora</span></div>
+        <div class="fact reveal-item"><b>Location</b><span>Sines / Évora, Portugal</span></div>
+        <div class="fact reveal-item"><b>Primary Stack</b><span>Java, SQL, JavaScript, React</span></div>
+        <div class="fact reveal-item"><b>Languages</b><span>Portuguese (Native), English</span></div>
       </div>
     </div>
   </section>
 
-  <section id="stack" class="reveal from-right">
+  <!-- Experience -->
+  <section id="experience" class="reveal">
     <div class="section-head">
-      <div class="eyebrow">capabilities</div>
-      <h2>Core competencies</h2>
-      <p>What three years of coursework actually turned into.</p>
-    </div>
-    <div class="proj-grid">
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Frontend</div>
-        <h3>React.js & Modern UI</h3>
-        <p>Building modular, state-driven interfaces using React hooks and components.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Systems & Architecture</div>
-        <h3>Low-level programming</h3>
-        <p>RISC-V assembly, process lifecycle, and memory management on C/Linux.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Networking</div>
-        <h3>Sockets & concurrency</h3>
-        <p>TCP/UDP programming, I/O multiplexing, POSIX threads, custom application-layer protocols.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Mobile</div>
-        <h3>Android architecture</h3>
-        <p>Decentralized networking simulation, UI/UX prototyping, device state management.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Full-Stack</div>
-        <h3>REST APIs & front-ends</h3>
-        <p>Designing scalable backend APIs and consuming them through dynamic interfaces.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Algorithms</div>
-        <h3>Graphs & complexity</h3>
-        <p>Network flow algorithms, graph theory, and time/space complexity optimization.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Databases</div>
-        <h3>Relational modeling</h3>
-        <p>Schema design, relational algebra, and complex SQL query optimization.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Digital Systems</div>
-        <h3>Circuit & state design</h3>
-        <p>State machine design, Boolean algebra optimization with Karnaugh maps.</p>
-      </div>
-      <div class="proj-card reveal-item">
-        <div class="proj-cat">Linux</div>
-        <h3>Systems administration</h3>
-        <p>Environment setup, dual-boot configuration, partitioning, bash scripting.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="reveal from-left">
-    <div class="section-head">
-      <div class="eyebrow">experience</div>
-      <h2>Software Engineering Internship</h2>
+      <div class="eyebrow">Work History</div>
+      <h2>Internship Experience</h2>
     </div>
     <div class="exp-card">
       <div class="exp-head">
         <div>
-          <h3>CIDEHUS — Interdisciplinary Centre for History, Cultures and Societies</h3>
+          <h3>CIDEHUS — Interdisciplinary Research Centre</h3>
           <div class="exp-org">University of Évora</div>
         </div>
         <div class="role">Software Engineering Intern</div>
       </div>
       <div class="exp-list">
-        <div class="exp-item reveal-item"><b>FULL-STACK</b> Designed and implemented dynamic, modular web interfaces in PHP, using AJAX and JavaScript for
-asynchronous data fetching.
-</div>
-        <div class="exp-item reveal-item"><b>DATABASE</b> Created PostgreSQL queries for server-side filtering and pagination, supporting public-facing endpoints</div>
-        <div class="exp-item reveal-item"><b>AUTOMATION</b> Built Python automation scripts with regular expressions for parsing, text normalization, encoding conversion
-(Windows-1252 to UTF-8), and migration of historical text into structured JSON.
-</div>
-        <div class="exp-item reveal-item"><b>DEVOPS</b> Orchestrated multi-service local environments with Docker and Docker Compose across databases, CMS engines, and back-end services.</div>
-        <div class="exp-item reveal-item"><b>GIT</b> Managed branching, history tracking, and rollback across collaborative and individual development cycles.</div>
+        <div class="exp-item reveal-item">
+          <b>FULL-STACK</b>
+          <span>Developed modular web interfaces using PHP, JavaScript, and AJAX for asynchronous data loading.</span>
+        </div>
+        <div class="exp-item reveal-item">
+          <b>DATABASE</b>
+          <span>Wrote PostgreSQL queries with server-side pagination, sorting, and multi-field filters.</span>
+        </div>
+        <div class="exp-item reveal-item">
+          <b>AUTOMATION</b>
+          <span>Built Python scripts using regex parsing to clean and convert raw historical text into structured JSON.</span>
+        </div>
+        <div class="exp-item reveal-item">
+          <b>DEVOPS</b>
+          <span>Set up local multi-service container environments using Docker and Docker Compose.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="reveal from-right">
+  <!-- Projects -->
+  <section id="projects" class="reveal">
     <div class="section-head">
-      <div class="eyebrow">selected work</div>
+      <div class="eyebrow">Selected Repositories</div>
       <h2>Projects</h2>
-      <p>From a three-year coursework repository — each one links straight to the code.</p>
+      <p>A selection of personal and academic work across backend, web, mobile, and system programming.</p>
     </div>
     <div class="proj-grid">
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/reactProjects" target="_blank" rel="noopener">
-        <div class="proj-cat">Frontend / Web</div>
-        <h3>React Projects</h3>
-        <p>Collection of modular web applications exploring component architecture, state management, and modern UI/UX practices.</p>
-        <div class="proj-stack">React · JavaScript · CSS3</div>
-        <span class="proj-link">View repo →</span>
-      </a>
-
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/eventastic" target="_blank" rel="noopener">
-        <div class="proj-cat">Backend</div>
+      <!-- Eventastic -->
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/eventastic" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Software Architecture / Java</div>
         <h3>Eventastic</h3>
-        <p>Modular event management system with registration logic and scalable architecture.</p>
-        <div class="proj-stack">Java · Spring Boot</div>
-        <span class="proj-link">View repo →</span>
+        <p>Modular event management system in pure Java. Features strict layer separation (entities and services), role-based workflows (Admin vs User), dynamic registration pricing rules, and report exporting.</p>
+        <div class="proj-stack">Java · OOP · Software Design</div>
+        <span class="proj-link">View repository →</span>
       </a>
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_TecnologiasWeb/tweb-t2-58049-59119" target="_blank" rel="noopener">
-        <div class="proj-cat">Web App</div>
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_TecnologiasWeb/tweb-t2-58049-59119" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Full-Stack Web</div>
         <h3>Room Rent</h3>
-        <p>Full-stack student housing web platform with a responsive front-end and RESTful API integration.</p>
-        <div class="proj-stack">JavaScript · HTML/CSS · PostgreSQL · Java · Spring</div>
+        <p>Student housing rental platform with search filters, authentication, and REST API integration.</p>
+        <div class="proj-stack">Java · Spring · PostgreSQL · JS</div>
         <span class="proj-link">View code →</span>
       </a>
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_redesOportunistas" target="_blank" rel="noopener">
-        <div class="proj-cat">Mobile App</div>
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/reactProjects" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Frontend</div>
+        <h3>React Projects</h3>
+        <p>Practical frontend exercises exploring component breakdown, custom hooks, and state management.</p>
+        <div class="proj-stack">React · JavaScript · CSS</div>
+        <span class="proj-link">View repository →</span>
+      </a>
+
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_redesOportunistas" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Mobile Prototype</div>
         <h3>Opportunistic Messenger</h3>
-        <p>Native Android prototype for decentralized opportunistic network communication with dynamic node-state management.</p>
+        <p>Native Android app simulating opportunistic store-carry-forward messaging across network nodes.</p>
         <div class="proj-stack">Kotlin · Android SDK</div>
         <span class="proj-link">View code →</span>
       </a>
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalho_RedesdeComputadores" target="_blank" rel="noopener">
-        <div class="proj-cat">Networking</div>
-        <h3>Real-Time Chat UDP/TCP</h3>
-        <p>Client-server messaging app: UDP for low-latency transmission, TCP for reliable file transfer, concurrency via pthreads and select().</p>
-        <div class="proj-stack">C</div>
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalho_RedesdeComputadores" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Systems & Networking</div>
+        <h3>Hybrid UDP/TCP Chat</h3>
+        <p>Client-server messaging app in C using UDP for messages, TCP for file transfer, and I/O multiplexing via select().</p>
+        <div class="proj-stack">C · Sockets · POSIX Threads</div>
         <span class="proj-link">View code →</span>
       </a>
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_SistemasDigitais" target="_blank" rel="noopener">
-        <div class="proj-cat">Hardware</div>
-        <h3>Digital Traffic Controller</h3>
-        <p>Digital logic circuit simulated in Logisim, with algorithmic state machine control optimized via Karnaugh maps and D-type flip-flops.</p>
-        <div class="proj-stack">Logisim · Boolean Logic</div>
-        <span class="proj-link">View code →</span>
-      </a>
-
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalhos_EstruturasdeDadosEAlgoritmos" target="_blank" rel="noopener">
-        <div class="proj-cat">Algorithms</div>
-        <h3>DSA projects</h3>
-        <p>Data structures and algorithms projects repository: Edmonds-Karp max flow, dynamic programming, and BFS graph traversals.</p>
-        <div class="proj-stack">C</div>
-        <span class="proj-link">View code →</span>
-      </a>
-
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_programacao3" target="_blank" rel="noopener">
-        <div class="proj-cat">Algorithmic Agent</div>
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_programacao3" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Functional Programming</div>
         <h3>Battleship OCaml Agent</h3>
-        <p>Autonomous Battleship-playing agent using a deterministic attack strategy.</p>
+        <p>Autonomous agent playing Battleship using deterministic coordinate targeting strategies.</p>
         <div class="proj-stack">OCaml</div>
         <span class="proj-link">View code →</span>
       </a>
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_MachineLearning" target="_blank" rel="noopener">
-        <div class="proj-cat">Machine Learning</div>
-        <h3>Brain Tumor Prediction</h3>
-        <p>ML models (Decision Trees, SVM) trained on Kaggle datasets for automated medical diagnosis.</p>
-        <div class="proj-stack">Python · Scikit-Learn</div>
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalhos_EstruturasdeDadosEAlgoritmos" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Algorithms</div>
+        <h3>DSA Implementations</h3>
+        <p>Core data structures and graph algorithms, including Edmonds-Karp max flow and BFS traversals in C.</p>
+        <div class="proj-stack">C · Data Structures</div>
         <span class="proj-link">View code →</span>
       </a>
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_arquiteturaComputadores" target="_blank" rel="noopener">
-        <div class="proj-cat">Low Level</div>
-        <h3>Image De-noising</h3>
-        <p>Low-level image processing: mean/median noise-reduction filters implemented directly in assembly.</p>
+      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_arquiteturaComputadores" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Low-Level</div>
+        <h3>Image De-noising Filters</h3>
+        <p>Noise-reduction mean and median filters written directly in RISC-V assembly with manual buffer management.</p>
         <div class="proj-stack">RISC-V Assembly</div>
-        <span class="proj-link">View code →</span>
-      </a>
-
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_programacao2/P2-Guru-WordGame-Java" target="_blank" rel="noopener">
-        <div class="proj-cat">Logic & Games</div>
-        <h3>Guru & Ouri</h3>
-        <p>Game logic implementations with custom dictionaries and state persistence.</p>
-        <div class="proj-stack">Java · C</div>
         <span class="proj-link">View code →</span>
       </a>
 
     </div>
   </section>
 
-  <footer id="contact" class="reveal from-left">
+  <!-- Contact footer -->
+  <footer id="contact" class="reveal">
     <div class="contact-grid">
       <div>
-        <div class="eyebrow">get in touch</div>
-        <h2>If i interest you,<br>let's build something solid.</h2>
+        <div class="eyebrow">Get in touch</div>
+        <h2>Looking for an engineer?<br>Let's connect.</h2>
       </div>
       <div class="contact-links">
-        <a class="clink reveal-item" href="mailto:dp.tavares05@gmail.com">✉ dp.tavares05@gmail.com</a>
-        <a class="clink reveal-item" href="https://www.linkedin.com/in/diogo-tavares-834106376/" target="_blank" rel="noopener">in LinkedIn</a>
-        <a class="clink reveal-item" href="https://github.com/dptavares05" target="_blank" rel="noopener">⌥ GitHub</a>
+        <a class="clink reveal-item" href="mailto:dp.tavares05@gmail.com">✉ Email</a>
+        <a class="clink reveal-item" href="https://www.linkedin.com/in/diogo-tavares-834106376/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+        <a class="clink reveal-item" href="https://github.com/dptavares05" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
         <a class="clink reveal-item" href="tel:+351928033539">☎ +351 928 033 539</a>
       </div>
     </div>
     <div class="foot-note">
-      <span>Diogo Tavares — Computer Engineer, University of Évora</span>
-      <span>Sines, Portugal</span>
+      <span>Diogo Tavares — Computer Engineer & Developer</span>
+      <span>Portugal</span>
     </div>
   </footer>
 
 </main>
 
 <script>
-  // mobile nav toggle
+  // Mobile navigation toggle
   const toggle = document.getElementById('navToggle');
-  const links = document.querySelector('nav.links');
-  if(toggle){
+  const links = document.getElementById('navLinks');
+
+  if (toggle && links) {
     toggle.addEventListener('click', () => {
-      const isOpen = links.style.display === 'flex';
-      links.style.display = isOpen ? 'none' : 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '60px';
-      links.style.right = '28px';
-      links.style.background = 'var(--panel)';
-      links.style.padding = '16px 22px';
-      links.style.borderRadius = '8px';
-      links.style.border = '1px solid var(--panel-line)';
+      const isOpen = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
-  // scroll reveal: sections fade/slide in, then their children stagger in
+  // Reveal sections as they enter the viewport.
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const sections = document.querySelectorAll('.reveal');
 
-  const sectionObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-        const items = entry.target.querySelectorAll('.reveal-item');
-        items.forEach((item, i) => {
-          item.style.transitionDelay = reduceMotion ? '0s' : (i * 0.07) + 's';
-          item.classList.add('show');
-        });
-        sectionObs.unobserve(entry.target);
-      }
+  if (!reduceMotion) {
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Reveal the section container.
+          entry.target.classList.add('show');
+
+          // Reveal child elements with a small staggered delay.
+          const items = entry.target.querySelectorAll('.reveal-item');
+          items.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.08}s`;
+            item.classList.add('show');
+          });
+        }
+      });
+    }, {
+      threshold: 0.15, // Trigger when 15% of the element is visible.
+      rootMargin: '0px 0px -40px 0px' // Wait until the section is meaningfully visible.
     });
-  }, {threshold: 0.15});
 
-  sections.forEach(el => sectionObs.observe(el));
-
-  if(reduceMotion){
-    document.querySelectorAll('.reveal, .reveal-item, .hero-anim').forEach(el => {
+    reveals.forEach(el => observer.observe(el));
+  } else {
+    // Accessibility fallback for users who prefer reduced motion.
+    document.querySelectorAll('.reveal, .reveal-item').forEach(el => {
       el.classList.add('show');
-      el.style.animation = 'none';
-      el.style.opacity = '1';
-      el.style.transform = 'none';
     });
   }
 </script>
