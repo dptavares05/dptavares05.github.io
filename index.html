@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diogo Tavares — Personal Portfolio</title>
-  <meta name="description" content="Personal portfolio of Diogo Tavares. Computer Engineering graduate focused on software design, Java, and modern web applications.">
+  <meta name="theme-color" content="#0C1520">
+  <meta name="description" content="Portfolio of Diogo Tavares, Computer Engineering graduate and MSc student in Computer Engineering at the University of Évora, focusing on AI Engineering, software systems, data and automation.">
+  <meta property="og:title" content="Diogo Tavares — Software Engineer & AI Engineering MSc Student">
+  <meta property="og:description" content="Computer Engineering graduate and MSc student focused on AI Engineering, software systems, data and automation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dptavares05.github.io/">
+  <title>Diogo Tavares — Software Engineer & AI Engineering MSc Student</title>
 
-  <!-- Typography: Space Grotesk (Body), JetBrains Mono (Code/UI), Nippo (Display/Headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=nippo@400&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0C1520;
@@ -42,7 +47,8 @@
     }
     body::before {
       content: "";
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background-image:
         linear-gradient(var(--panel-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--panel-line) 1px, transparent 1px);
@@ -52,6 +58,10 @@
       opacity: 0.45;
     }
     a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--copper-light);
+      outline-offset: 3px;
+    }
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
     .eyebrow {
@@ -68,18 +78,23 @@
 
     /* Navigation */
     header.nav {
-      position: sticky; top: 0; z-index: 50;
+      position: sticky;
+      top: 0;
+      z-index: 50;
       background: rgba(12, 21, 32, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--panel-line);
     }
     .nav-inner {
-      max-width: 960px; margin: 0 auto; padding: 16px 24px;
-      display: flex; align-items: center; justify-content: space-between;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .logo { font-family: var(--mono); font-weight: 600; font-size: 0.95rem; }
     .logo span { color: var(--copper); }
-    
     nav.links {
       display: flex;
       gap: 4px;
@@ -93,46 +108,47 @@
       border-radius: 4px;
       transition: all 0.2s var(--ease);
     }
-    nav.links a:hover {
-      color: var(--copper-light);
-      background: rgba(201, 122, 61, 0.08);
-    }
+    nav.links a:hover { color: var(--copper-light); background: rgba(201, 122, 61, 0.08); }
     .nav-toggle {
-      display: none; background: none; border: 1px solid var(--panel-line);
-      color: var(--text); padding: 7px 12px; font-family: var(--mono); font-size: 0.8rem;
-      border-radius: 4px; cursor: pointer;
+      display: none;
+      background: none;
+      border: 1px solid var(--panel-line);
+      color: var(--text);
+      padding: 7px 12px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
     }
 
-    /* Hero section */
-    .hero {
-      padding: 110px 0 75px;
-      text-align: center;
-      max-width: 820px;
-      margin: 0 auto;
-    }
+    /* Hero */
+    .hero { padding: 110px 0 75px; text-align: center; max-width: 820px; margin: 0 auto; }
     .hero h1 {
       font-family: var(--heading);
       font-size: clamp(2rem, 4.4vw, 3rem);
       line-height: 1.25;
       font-weight: 400;
       margin: 18px 0 20px;
-      letter-spacing: 0.02em; 
+      letter-spacing: 0.02em;
     }
-    .hero h1 em {
-      color: var(--copper-light);
-      font-style: normal;
-    }
+    .hero h1 em { color: var(--copper-light); font-style: normal; }
     .hero p.lede {
       font-size: 1.12rem;
       color: var(--text-muted);
       margin: 0 auto 34px;
-      max-width: 620px;
+      max-width: 690px;
       line-height: 1.6;
     }
     .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn {
-      font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.02em;
-      padding: 13px 22px; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      padding: 13px 20px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       transition: transform .2s, box-shadow .2s, border-color .2s;
     }
     .btn-primary { background: var(--copper); color: #160D05; font-weight: 600; }
@@ -140,13 +156,13 @@
     .btn-ghost { border: 1px solid var(--panel-line); color: var(--text); }
     .btn-ghost:hover { border-color: var(--copper); transform: translateY(-2px); }
 
-    /* Shared section styles */
+    /* Shared sections */
     section { padding: 64px 0; }
     .section-head { margin-bottom: 36px; }
     .section-head h2 { font-family: var(--mono); font-size: 1.8rem; font-weight: 600; margin-top: 8px; }
-    .section-head p { color: var(--text-muted); max-width: 580px; margin-top: 8px; }
+    .section-head p { color: var(--text-muted); max-width: 650px; margin-top: 8px; }
 
-    /* About section */
+    /* About */
     .about {
       background: var(--paper);
       color: var(--ink);
@@ -159,12 +175,27 @@
     .about .section-head h2, .about .eyebrow { color: var(--ink); }
     .about .eyebrow::before { color: var(--copper); }
     .about p { color: var(--ink-muted); font-size: 1.02rem; line-height: 1.7; }
+    .about p + p { margin-top: 16px; }
     .about-facts { font-family: var(--mono); font-size: 0.82rem; display: flex; flex-direction: column; gap: 14px; }
-    .fact { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(20, 16, 8, 0.18); padding-bottom: 8px; }
-    .fact b { color: var(--ink); }
-    .fact span { color: var(--ink-muted); }
+    .fact { display: flex; justify-content: space-between; gap: 18px; border-bottom: 1px solid rgba(20, 16, 8, 0.18); padding-bottom: 8px; }
+    .fact b { color: var(--ink); white-space: nowrap; }
+    .fact span, .fact a { color: var(--ink-muted); text-align: right; }
+    .fact a { text-decoration: underline; text-decoration-color: var(--copper); text-underline-offset: 3px; }
+    .fact a:hover { color: var(--copper); }
 
-    /* Experience section */
+    /* Current focus */
+    .focus-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .focus-card {
+      background: var(--panel);
+      border: 1px solid var(--panel-line);
+      border-radius: 8px;
+      padding: 25px;
+    }
+    .focus-card h3 { margin: 8px 0; font-size: 1.05rem; }
+    .focus-card p { color: var(--text-muted); font-size: 0.91rem; }
+    .focus-stack { margin-top: 16px; font-family: var(--mono); font-size: 0.72rem; color: var(--copper-light); }
+
+    /* Experience */
     .exp-card { background: var(--panel); border: 1px solid var(--panel-line); border-radius: 8px; padding: 30px; }
     .exp-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
     .exp-head h3 { font-size: 1.2rem; font-weight: 600; }
@@ -174,7 +205,7 @@
     .exp-item { display: flex; gap: 12px; font-size: 0.92rem; color: var(--text); }
     .exp-item b { color: var(--copper-light); font-family: var(--mono); font-size: 0.76rem; white-space: nowrap; }
 
-    /* Projects grid */
+    /* Projects */
     .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
     .proj-card {
       background: var(--panel);
@@ -184,98 +215,94 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      transition: transform .2s, border-color .2s;
+      transition: transform .2s, border-color .2s, background .2s;
     }
     a.proj-card:hover { transform: translateY(-3px); border-color: var(--copper); background: var(--panel-hover); }
+    .proj-card.featured { border-color: rgba(226, 162, 104, 0.5); }
     .proj-cat { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper-light); }
     .proj-card h3 { font-size: 1.05rem; font-weight: 600; }
     .proj-card p { font-size: 0.88rem; color: var(--text-muted); flex-grow: 1; }
     .proj-stack { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); }
     .proj-link { font-family: var(--mono); font-size: 0.76rem; color: var(--copper-light); display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
 
-    /* Contact footer */
+    /* Contact */
     footer { padding: 80px 0 50px; border-top: 1px solid var(--panel-line); margin-top: 40px; }
     .contact-grid { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 30px; }
     footer h2 { font-family: var(--mono); font-size: 1.7rem; line-height: 1.3; }
     .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
     .clink {
-      border: 1px solid var(--panel-line); border-radius: 4px; padding: 12px 18px;
-      font-family: var(--mono); font-size: 0.82rem; display: flex; align-items: center; gap: 10px;
+      border: 1px solid var(--panel-line);
+      border-radius: 4px;
+      padding: 12px 18px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       transition: border-color .2s, transform .2s;
     }
     .clink:hover { border-color: var(--copper); transform: translateY(-2px); }
     .foot-note { margin-top: 50px; font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 
-    /* Scroll-triggered reveal animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-      will-change: opacity, transform;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Staggered animation for elements inside revealed sections */
-    .reveal-item {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
-      will-change: opacity, transform;
-    }
-
-    .reveal-item.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Respect the user's reduced-motion preference */
+    /* Scroll animations */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); will-change: opacity, transform; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .reveal-item { opacity: 0; transform: translateY(18px); transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); will-change: opacity, transform; }
+    .reveal-item.show { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) {
-      .reveal,
-      .reveal-item {
-        transition: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-      }
+      html { scroll-behavior: auto; }
+      .reveal, .reveal-item { transition: none !important; opacity: 1 !important; transform: none !important; }
     }
 
-    /* Mobile layout */
+    /* Mobile */
     @media (max-width: 820px) {
       .hero { padding: 80px 0 50px; }
       .about { grid-template-columns: 1fr; padding: 28px; }
+      .focus-grid { grid-template-columns: 1fr; }
       .nav-toggle { display: block; }
-      
       nav.links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px; right: 24px;
+        top: 60px;
+        right: 24px;
         background: var(--panel);
         border: 1px solid var(--panel-line);
         padding: 16px;
         border-radius: 6px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        align-items: stretch;
       }
       nav.links.is-open { display: flex; }
     }
-
+    @media (max-width: 560px) {
+      .wrap { padding: 0 18px; }
+      .nav-inner { padding: 14px 18px; }
+      .hero h1 { font-size: 2rem; }
+      .hero p.lede { font-size: 1rem; }
+      .about { padding: 24px 20px; }
+      .fact { flex-direction: column; gap: 3px; }
+      .fact span, .fact a { text-align: left; }
+      .exp-card { padding: 22px 18px; }
+      .exp-item { flex-direction: column; gap: 2px; }
+      .contact-links { width: 100%; }
+      .clink { flex: 1 1 auto; justify-content: center; }
+    }
   </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">Diogo<span>_</span>Tavares</a>
-    <nav class="links" id="navLinks">
+    <a href="#" class="logo" aria-label="Diogo Tavares home">Diogo<span>_</span>Tavares</a>
+    <nav class="links" id="navLinks" aria-label="Main navigation">
       <a href="#about">About</a>
+      <a href="#focus">Focus</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">Menu</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
   </div>
 </header>
 
@@ -283,14 +310,18 @@
 
   <!-- Hero -->
   <section class="hero reveal">
-    <div class="eyebrow reveal-item">Computer Engineering Graduate · Portugal</div>
-    <h1 class="reveal-item">Welcome, I'm <em>Diogo Tavares</em><br/> and this is my <em>Personal Portfolio</em>.</h1>
+    <div class="eyebrow reveal-item">Computer Engineering Graduate · MSc Student Focused on AI Engineering</div>
+    <h1 class="reveal-item">Hi, I'm <em>Diogo Tavares</em>.<br/>I build software and <em>intelligent systems</em>.</h1>
     <p class="lede reveal-item">
-      I'm a software developer with a background in Computer Engineering. I focus on building practical applications across the stack, working with object-oriented design in Java, relational databases, and frontends in React.
+      Computer Engineering graduate and MSc student in Computer Engineering at the
+      University of Évora, focusing academically on AI Engineering. I build practical
+      software across the stack, with a focus on backend systems, data processing,
+      automation, and applied AI.
     </p>
     <div class="btn-row reveal-item">
       <a class="btn btn-primary" href="#projects">Explore Projects ↓</a>
-      <a class="btn btn-ghost" href="https://github.com/dptavares05" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+      <a class="btn btn-ghost" href="/CV_Fullstack.pdf" target="_blank" rel="noopener noreferrer">Download CV ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/dptavares05" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </div>
   </section>
 
@@ -301,15 +332,55 @@
         <div class="eyebrow">Profile</div>
         <div class="section-head"><h2>About me</h2></div>
         <p>
-          I completed my degree in Computer Engineering at the University of Évora. My coursework gave me a concrete foundation in how software operates, from low-level memory and networks to full-stack web platforms. Currently, I spend my time designing clean application logic, handling databases, and putting together responsive user interfaces.
+          I am a Computer Engineering graduate and MSc student in Computer Engineering
+          at the University of Évora. My background combines software engineering,
+          backend development, relational databases, computer networks, and low-level systems.
+        </p>
+        <p>
+          I am currently deepening my work in artificial intelligence and intelligent
+          systems, while continuing to build practical full-stack applications with
+          Java, Spring Boot, JavaScript, React, Python, and PostgreSQL.
         </p>
       </div>
       <div class="about-facts">
-        <div class="fact reveal-item"><b>Degree</b><span>BSc in Computer Engineering</span></div>
+        <div class="fact reveal-item"><b>Education</b><span>BSc Computer Engineering · MSc Computer Engineering</span></div>
         <div class="fact reveal-item"><b>Institution</b><span>University of Évora</span></div>
+        <div class="fact reveal-item"><b>Focus</b><span>AI Engineering · Software Systems · Data</span></div>
+        <div class="fact reveal-item"><b>Primary Stack</b><span>Java · Spring · Python · React · PostgreSQL</span></div>
         <div class="fact reveal-item"><b>Location</b><span>Sines / Évora, Portugal</span></div>
-        <div class="fact reveal-item"><b>Primary Stack</b><span>Java, SQL, JavaScript, React</span></div>
-        <div class="fact reveal-item"><b>Languages</b><span>Portuguese (Native), English</span></div>
+        <div class="fact reveal-item"><b>English</b><a href="https://cert.efset.org/en/MugSmd" target="_blank" rel="noopener noreferrer">C2 Proficient · EF SET 72/100 ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current focus -->
+  <section id="focus" class="reveal">
+    <div class="section-head">
+      <div class="eyebrow">Current Direction</div>
+      <h2>What I'm exploring</h2>
+      <p>
+        My current academic direction is AI Engineering: combining reliable software
+        engineering practices with data-driven methods to build useful and maintainable systems.
+      </p>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-card reveal-item">
+        <div class="proj-cat">AI Engineering</div>
+        <h3>Applied Artificial Intelligence</h3>
+        <p>
+          Building an academic path toward intelligent systems, with a focus on
+          connecting AI methods to practical software applications.
+        </p>
+        <div class="focus-stack">MSc Coursework · AI · Intelligent Systems</div>
+      </div>
+      <div class="focus-card reveal-item">
+        <div class="proj-cat">Software Systems</div>
+        <h3>Reliable Application Development</h3>
+        <p>
+          Combining backend development, databases, APIs, automation, networking,
+          and containerized environments.
+        </p>
+        <div class="focus-stack">Java · Python · PostgreSQL · Docker</div>
       </div>
     </div>
   </section>
@@ -318,13 +389,13 @@
   <section id="experience" class="reveal">
     <div class="section-head">
       <div class="eyebrow">Work History</div>
-      <h2>Internship Experience</h2>
+      <h2>Software Engineering Internship</h2>
     </div>
     <div class="exp-card">
       <div class="exp-head">
         <div>
           <h3>CIDEHUS — Interdisciplinary Research Centre</h3>
-          <div class="exp-org">University of Évora</div>
+          <div class="exp-org">University of Évora · Feb 2026 – May 2026</div>
         </div>
         <div class="role">Software Engineering Intern</div>
       </div>
@@ -338,43 +409,50 @@
           <span>Wrote PostgreSQL queries with server-side pagination, sorting, and multi-field filters.</span>
         </div>
         <div class="exp-item reveal-item">
-          <b>AUTOMATION</b>
-          <span>Built Python scripts using regex parsing to clean and convert raw historical text into structured JSON.</span>
+          <b>DATA PIPELINES</b>
+          <span>Built Python and Node.js pipelines to parse, normalize, and ingest historical texts into structured JSON and Directus CMS.</span>
         </div>
         <div class="exp-item reveal-item">
           <b>DEVOPS</b>
-          <span>Set up local multi-service container environments using Docker and Docker Compose.</span>
+          <span>Set up local multi-service container environments using Docker and Docker Compose, collaborating through Git and Agile workflows.</span>
         </div>
       </div>
     </div>
   </section>
 
-<!-- Projects -->
+  <!-- Projects -->
   <section id="projects" class="reveal">
     <div class="section-head">
       <div class="eyebrow">Selected Repositories</div>
       <h2>Projects</h2>
       <p>
-        Individual builds across backend, frontend, and systems — or browse my  
-        <a href="https://github.com/dptavares05/projetosLicenciatura" target="_blank" rel="noopener noreferrer" style="color: var(--copper-light); text-decoration: underline;"> complete degree coursework repository →</a>
+        Selected work across backend, frontend, systems, networking, and algorithms —
+        or browse my <a href="https://github.com/dptavares05/projetosLicenciatura" target="_blank" rel="noopener noreferrer" style="color: var(--copper-light); text-decoration: underline;">complete degree coursework repository →</a>
       </p>
     </div>
     <div class="proj-grid">
 
-      <!-- Eventastic -->
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/eventastic" target="_blank" rel="noopener noreferrer">
-        <div class="proj-cat">Software Architecture / Java</div>
+      <a class="proj-card featured reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_TecnologiasWeb/tweb-t2-58049-59119" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Featured · Full-Stack Web</div>
+        <h3>Room Rent</h3>
+        <p>Student housing rental platform with search filters, authentication, relational data, and REST API integration.</p>
+        <div class="proj-stack">Java · Spring · PostgreSQL · JavaScript</div>
+        <span class="proj-link">View code →</span>
+      </a>
+
+      <a class="proj-card featured reveal-item" href="https://github.com/dptavares05/eventastic" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Featured · Software Architecture</div>
         <h3>Eventastic</h3>
-        <p>Modular event management system in pure Java. Features strict layer separation (entities and services), role-based workflows (Admin vs User), dynamic registration pricing rules, and report exporting.</p>
+        <p>Modular event management system in pure Java with layered design, role-based workflows, pricing rules, and report exporting.</p>
         <div class="proj-stack">Java · OOP · Software Design</div>
         <span class="proj-link">View repository →</span>
       </a>
 
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalhos_TecnologiasWeb/tweb-t2-58049-59119" target="_blank" rel="noopener noreferrer">
-        <div class="proj-cat">Full-Stack Web</div>
-        <h3>Room Rent</h3>
-        <p>Student housing rental platform with search filters, authentication, and REST API integration.</p>
-        <div class="proj-stack">Java · Spring · PostgreSQL · JS</div>
+      <a class="proj-card featured reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalho_RedesdeComputadores" target="_blank" rel="noopener noreferrer">
+        <div class="proj-cat">Featured · Systems & Networking</div>
+        <h3>Hybrid UDP/TCP Chat</h3>
+        <p>Client-server messaging system in C using UDP for messages, TCP for file transfer, and I/O multiplexing with select().</p>
+        <div class="proj-stack">C · Sockets · POSIX Threads</div>
         <span class="proj-link">View code →</span>
       </a>
 
@@ -387,25 +465,17 @@
       </a>
 
       <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_redesOportunistas" target="_blank" rel="noopener noreferrer">
-        <div class="proj-cat">Mobile Prototype</div>
+        <div class="proj-cat">Mobile Networking Prototype</div>
         <h3>Opportunistic Messenger</h3>
-        <p>Native Android app simulating opportunistic store-carry-forward messaging across network nodes.</p>
+        <p>Native Android application simulating store-carry-forward messaging across network nodes.</p>
         <div class="proj-stack">Kotlin · Android SDK</div>
-        <span class="proj-link">View code →</span>
-      </a>
-
-      <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/2ano/trabalho_RedesdeComputadores" target="_blank" rel="noopener noreferrer">
-        <div class="proj-cat">Systems & Networking</div>
-        <h3>Hybrid UDP/TCP Chat</h3>
-        <p>Client-server messaging app in C using UDP for messages, TCP for file transfer, and I/O multiplexing via select().</p>
-        <div class="proj-stack">C · Sockets · POSIX Threads</div>
         <span class="proj-link">View code →</span>
       </a>
 
       <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/3ano/trabalho_programacao3" target="_blank" rel="noopener noreferrer">
         <div class="proj-cat">Functional Programming</div>
         <h3>Battleship OCaml Agent</h3>
-        <p>Autonomous agent playing Battleship using deterministic coordinate targeting strategies.</p>
+        <p>Autonomous Battleship agent using deterministic coordinate-targeting strategies.</p>
         <div class="proj-stack">OCaml</div>
         <span class="proj-link">View code →</span>
       </a>
@@ -421,86 +491,74 @@
       <a class="proj-card reveal-item" href="https://github.com/dptavares05/projetosLicenciatura/tree/main/1ano/trabalho_arquiteturaComputadores" target="_blank" rel="noopener noreferrer">
         <div class="proj-cat">Low-Level</div>
         <h3>Image De-noising Filters</h3>
-        <p>Noise-reduction mean and median filters written directly in RISC-V assembly with manual buffer management.</p>
+        <p>Mean and median noise-reduction filters written in RISC-V assembly with manual buffer management.</p>
         <div class="proj-stack">RISC-V Assembly</div>
         <span class="proj-link">View code →</span>
       </a>
-
     </div>
   </section>
 
-  <!-- Contact footer -->
+  <!-- Contact -->
   <footer id="contact" class="reveal">
     <div class="contact-grid">
       <div>
         <div class="eyebrow">Get in touch</div>
-        <h2>Looking for an engineer?<br>Let's connect.</h2>
+        <h2>Looking for a software<br/>or AI engineering intern?</h2>
       </div>
       <div class="contact-links">
         <a class="clink reveal-item" href="mailto:dp.tavares05@gmail.com">✉ Email</a>
         <a class="clink reveal-item" href="https://www.linkedin.com/in/diogo-tavares-834106376/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
         <a class="clink reveal-item" href="https://github.com/dptavares05" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+        <a class="clink reveal-item" href="https://cert.efset.org/en/MugSmd" target="_blank" rel="noopener noreferrer">C2 English</a>
         <a class="clink reveal-item" href="tel:+351928033539">☎ +351 928 033 539</a>
       </div>
     </div>
     <div class="foot-note">
-      <span>Diogo Tavares — Computer Engineer & Developer</span>
-      <span>Portugal</span>
+      <span>Diogo Tavares — Computer Engineering Graduate · AI Engineering MSc Student</span>
+      <span>Sines / Évora, Portugal</span>
     </div>
   </footer>
 
 </main>
 
 <script>
-  // Mobile navigation toggle
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
 
   if (toggle && links) {
     toggle.addEventListener('click', () => {
       const isOpen = links.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
         links.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  // Reveal sections as they enter the viewport.
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals = document.querySelectorAll('.reveal');
 
-  if (!reduceMotion) {
-    const reveals = document.querySelectorAll('.reveal');
-
+  if (!reduceMotion && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Reveal the section container.
           entry.target.classList.add('show');
-
-          // Reveal child elements with a small staggered delay.
-          const items = entry.target.querySelectorAll('.reveal-item');
-          items.forEach((item, index) => {
+          entry.target.querySelectorAll('.reveal-item').forEach((item, index) => {
             item.style.transitionDelay = `${index * 0.08}s`;
             item.classList.add('show');
           });
+          observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.15, // Trigger when 15% of the element is visible.
-      rootMargin: '0px 0px -40px 0px' // Wait until the section is meaningfully visible.
-    });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-    reveals.forEach(el => observer.observe(el));
+    reveals.forEach(element => observer.observe(element));
   } else {
-    // Accessibility fallback for users who prefer reduced motion.
-    document.querySelectorAll('.reveal, .reveal-item').forEach(el => {
-      el.classList.add('show');
-    });
+    document.querySelectorAll('.reveal, .reveal-item').forEach(element => element.classList.add('show'));
   }
 </script>
 
