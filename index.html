@@ -183,6 +183,21 @@
     .fact a { text-decoration: underline; text-decoration-color: var(--copper); text-underline-offset: 3px; }
     .fact a:hover { color: var(--copper); }
 
+    /* Languages */
+    .language-value {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      text-align: right;
+    }
+
+    .certificate-link {
+      white-space: nowrap;
+    }
+
+
     /* Current focus */
     .focus-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .focus-card {
@@ -346,10 +361,15 @@
       <div class="about-facts">
         <div class="fact reveal-item"><b>Education</b><span>BSc Computer Engineering · MSc Computer Engineering</span></div>
         <div class="fact reveal-item"><b>Institution</b><span>University of Évora</span></div>
-        <div class="fact reveal-item"><b>Focus</b><span>AI Engineering · Software Systems · Data</span></div>
-        <div class="fact reveal-item"><b>Primary Stack</b><span>Java · Spring · Python · React · PostgreSQL</span></div>
+        <div class="fact reveal-item"><b>Focus</b><span>AI Engineering · Software Engineering · Software Development</span></div>
+        <div class="fact reveal-item"><b>Primary Stack</b><span>Java · JavaScript · Spring · Python · React · PostgreSQL</span></div>
         <div class="fact reveal-item"><b>Location</b><span>Sines / Évora, Portugal</span></div>
-        <div class="fact reveal-item"><b>English</b><a href="https://cert.efset.org/en/MugSmd" target="_blank" rel="noopener noreferrer">C2 Proficient · EF SET 72/100 ↗</a></div>
+        <div class="fact reveal-item"><b>Languages</b>
+          <span class="language-value">
+            Portuguese (Native) · English ·
+            <a class="certificate-link" href="https://cert.efset.org/en/MugSmd" target="_blank" rel="noopener noreferrer">C2 Certified ↗</a>
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -360,8 +380,8 @@
       <div class="eyebrow">Current Direction</div>
       <h2>What I'm exploring</h2>
       <p>
-        My current academic direction is AI Engineering: combining reliable software
-        engineering practices with data-driven methods to build useful and maintainable systems.
+        My current academic direction is AI Engineering: Having a baseline of software
+        engineering practices down i with data-driven methods to build useful and maintainable systems.
       </p>
     </div>
     <div class="focus-grid">
@@ -510,7 +530,6 @@
         <a class="clink reveal-item" href="mailto:dp.tavares05@gmail.com">✉ Email</a>
         <a class="clink reveal-item" href="https://www.linkedin.com/in/diogo-tavares-834106376/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
         <a class="clink reveal-item" href="https://github.com/dptavares05" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
-        <a class="clink reveal-item" href="https://cert.efset.org/en/MugSmd" target="_blank" rel="noopener noreferrer">C2 English</a>
         <a class="clink reveal-item" href="tel:+351928033539">☎ +351 928 033 539</a>
       </div>
     </div>
